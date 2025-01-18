@@ -1,0 +1,80 @@
+<form [formGroup]="transactionFormGroup!">
+  <mat-card [class.mat-elevation-z1]="'true'">
+    <mat-card-header>
+      <mat-card-title> <mat-icon>add</mat-icon> Transaction </mat-card-title>
+    </mat-card-header>
+    <mat-divider></mat-divider>
+    <br />
+    <mat-card-content fxLayout="column">
+      <mat-form-field appearance="outline">
+        <mat-label>Amount</mat-label>
+        <input matInput placeholder="Amount" formControlName="amount" />
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Description</mat-label>
+        <input
+          matInput
+          placeholder="Description"
+          formControlName="description"
+        />
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Transaction Types</mat-label>
+        <mat-select
+          placeholder="Transaction Types"
+          [formControl]="transactionTypeControl"
+          required
+        >
+          <mat-option>--Transaction Types--</mat-option>
+          <mat-option
+            *ngFor="let transactionType of transactionTypes"
+            [value]="transactionType"
+            >{{ transactionType.name }}</mat-option
+          >
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Created Date</mat-label>
+        <input
+          matInput
+          readonly
+          [matDatepicker]="transactionDatePicker"
+          formControlName="dateCreated"
+        />
+        <mat-datepicker-toggle
+          matIconSuffix
+          [for]="transactionDatePicker"
+        ></mat-datepicker-toggle>
+        <mat-datepicker #transactionDatePicker disabled></mat-datepicker>
+      </mat-form-field>
+    </mat-card-content>
+    <mat-divider></mat-divider>
+    <div class="card-actions">
+      <mat-card-actions [align]="'end'">
+        <div fxLayout="row">
+          <span fxFlex></span>
+          <button
+            type="button"
+            mat-raised-button
+            color="accent"
+            (click)="back()"
+          >
+            Back
+          </button>
+          <button
+            style="margin-left: 8px"
+            type="submit"
+            mat-raised-button
+            color="primary"
+            (click)="submit()"
+            [disabled]="
+              !transactionFormGroup!.valid || !transactionFormGroup!.dirty
+            "
+          >
+            Submit
+          </button>
+        </div>
+      </mat-card-actions>
+    </div>
+  </mat-card>
+</form>

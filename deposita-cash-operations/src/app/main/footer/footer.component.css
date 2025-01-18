@@ -1,0 +1,13 @@
+.table-footer {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #e1e1e1;
+  background-color: #1f2d42;
+  padding: 10px;
+}
+
+.table-footer p {
+  margin: 0;
+  font-weight: normal;
+}

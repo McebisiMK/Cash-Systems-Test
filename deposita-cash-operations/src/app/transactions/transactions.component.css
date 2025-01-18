@@ -1,0 +1,177 @@
+/* @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import '~material-design-icons/iconfont/material-icons.css'; */
+
+.no-wrap {
+  white-space: nowrap;
+}
+
+.fixed {
+  table-layout: fixed;
+}
+
+.square {
+  height: 200px;
+  width: 200px;
+  background-color: #e0e0e0;
+  border: 2px solid;
+}
+
+.transactions-table-container {
+  display: flex;
+  flex-direction: column;
+  min-width: 300px;
+}
+
+.mat-table {
+  overflow: auto;
+  font-family: "Open Sans", sans-serif;
+}
+
+.mat-header-cell.mat-sort-header-sorted {
+  color: black;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: navy;
+  font-weight: normal;
+}
+
+.mat-cell:nth-child(4),
+.mat-header-cell:nth-child(4) {
+  flex: 0 0 40px;
+}
+
+.mat-cell:nth-child(5),
+.mat-header-cell:nth-child(5) {
+  flex: 0 0 40px;
+}
+
+.mat-sort-header-container {
+  font-size: larger;
+  font-weight: bolder;
+}
+
+:host ::ng-deep.mat-paginator .mat-paginator-container {
+  justify-content: flex-start !important;
+  display: flex !important;
+  align-items: center !important;
+  min-height: 46px !important;
+  padding: 0 8px;
+  flex-wrap: wrap-reverse;
+  width: 100%;
+  font-size: 14px !important;
+  font-family: "Open Sans", sans-serif !important;
+}
+
+.btn {
+  text-transform: none;
+}
+
+.mat-sort-header-button {
+  font-size: larger !important;
+  font-weight: bold !important;
+}
+
+/* General container styling */
+.transactions-table-container {
+  background-color: #f8f9fa;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px auto;
+  width: 90%;
+  max-width: 1200px;
+  height: 75vh; /* Set to 70% of the viewport height */
+  display: flex;
+  flex-direction: column;
+}
+
+mat-table {
+  flex: 1;
+  overflow-y: auto;
+}
+
+/* Table header */
+mat-header-cell {
+  font-weight: bold;
+  text-align: center;
+  background-color: #2a3f54 !important;
+  color: #ffffff;
+  padding: 15px;
+  border: 1px solid #dee2e6;
+}
+
+mat-header-cell.action-column {
+  width: 60px; /* Reduce width for edit and delete columns */
+  text-align: center;
+}
+
+/* Table rows */
+mat-row:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+mat-row:hover {
+  background-color: #e9ecef;
+}
+
+/* Table cells */
+mat-cell {
+  text-align: center;
+  padding: 15px;
+  font-size: 0.9rem;
+  border: 1px solid #dee2e6;
+}
+
+mat-cell.icon-cell {
+  width: 60px; /* Reduce width for action columns */
+}
+
+/* Center action icons */
+.icon-cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Action buttons */
+.edit-button,
+.delete-button {
+  background: none;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.edit-button mat-icon {
+  color: #28a745; /* Green for edit */
+}
+
+.delete-button mat-icon {
+  color: #dc3545; /* Red for delete */
+}
+
+button.mat-icon-button:hover mat-icon {
+  transform: scale(1.1);
+  transition: transform 0.2s ease-in-out;
+}
+
+/* Paginator styling */
+mat-paginator {
+  margin-top: 20px;
+  background-color: #ffffff;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.mat-paginator-navigation button {
+  color: #007bff;
+}
