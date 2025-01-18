@@ -19,6 +19,15 @@ namespace DepositaCashOperations.Infrastructure.DataSeeding
             };
 
             bankingDbContext.TransactionTypes.AddRange(transactionTypes);
+
+            bankingDbContext.Transactions.Add(new Transaction
+            {
+                Amount = 3000,
+                Description = "Test Transaction",
+                TransactionType = "Deposit",
+                DateCreated = DateTime.Now
+            });
+
             bankingDbContext.SaveChanges();
         }
     }
