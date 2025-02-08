@@ -5,11 +5,11 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DepositaCashOperations.Application.Transactions.Commands.Delete
 {
-    public class DeleteTransactionCommand : IRequest<Unit>
+    public class DeleteTransactionCommand : IRequest<bool>
     {
         public int Id { get; set; }
 
-        public class DeleteTransactionCommandHandler : IRequestHandler<DeleteTransactionCommand, Unit>
+        public class DeleteTransactionCommandHandler : IRequestHandler<DeleteTransactionCommand, bool>
         {
             private readonly IRepository<Transaction> _transactionRepository;
 
@@ -18,18 +18,18 @@ namespace DepositaCashOperations.Application.Transactions.Commands.Delete
                 _transactionRepository = transactionRepository;
             }
 
-            public async Task<Unit> Handle(DeleteTransactionCommand request, CancellationToken cancellationToken)
+            public async Task<bool> Handle(DeleteTransactionCommand request, CancellationToken cancellationToken)
             {
                 var transaction = await _transactionRepository
                                            .GetByExpression(transaction => transaction.TransactionId == request.Id)
                                            .FirstOrDefaultAsync(cancellationToken);
 
-                if (transaction == null) return Unit.Value;
+                if (transaction == null) return false;
 
                 _transactionRepository.Remove(transaction);
                 await _transactionRepository.SaveChangesAsync(cancellationToken);
 
-                return Unit.Value;
+                return true;
             }
         }
     }

@@ -16,7 +16,7 @@ import { provideNativeDateAdapter } from '@angular/material/core';
 
 @Component({
   selector: 'app-update-transaction',
-  providers: [provideNativeDateAdapter(), TransactionService],
+  providers: [provideNativeDateAdapter()],
   imports: [
     MatDialogModule,
     CommonModule,

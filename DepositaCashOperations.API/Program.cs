@@ -1,9 +1,15 @@
+using DepositaCashOperations.API.GraphQL.Queries;
 using DepositaCashOperations.Application;
-using DepositaCashOperations.Application.Common.Models;
+using HotChocolate;
+using HotChocolate.Data;
 using DepositaCashOperations.Infrastructure;
 using DepositaCashOperations.Infrastructure.DataSeeding;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System.Text.Json;
+using Error = DepositaCashOperations.Application.Common.Models.Error;
+using DepositaCashOperations.Infrastructure.Persistence;
+using DepositaCashOperations.API.GraphQL.Mutations;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -32,6 +38,18 @@ builder.Services.AddControllers()
                 };
             });
 
+builder.Services
+    .AddGraphQLServer()
+    .ModifyCostOptions((options) => { options.MaxFieldCost = 5000; })
+    .AddQueryType()
+        .AddTypeExtension<TransactionQueries>()
+        .AddTypeExtension<TransactionTypeQueries>()
+    .AddMutationType()
+        .AddTypeExtension<TransactionMutations>()
+    .AddProjections()
+    .AddFiltering()
+    .AddSorting();
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
@@ -50,9 +68,9 @@ if (app.Environment.IsDevelopment())
 
 app.UseCors("AllowOrigins");
 
-app.UseHttpsRedirection();
-
 app.UseAuthorization();
+
+app.MapGraphQL();
 
 app.MapControllers();
 

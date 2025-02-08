@@ -6,7 +6,8 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "generate": "cross-env NODE_TLS_REJECT_UNAUTHORIZED=0 graphql-codegen"
   },
   "private": true,
   "dependencies": {
@@ -20,6 +21,9 @@
     "@angular/platform-browser": "^19.1.0",
     "@angular/platform-browser-dynamic": "^19.1.0",
     "@angular/router": "^19.1.0",
+    "@apollo/client": "^3.0.0",
+    "apollo-angular": "^8.0.1",
+    "graphql": "^16.10.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.15.0"
@@ -28,13 +32,19 @@
     "@angular-devkit/build-angular": "^19.1.2",
     "@angular/cli": "^19.1.2",
     "@angular/compiler-cli": "^19.1.0",
+    "@graphql-codegen/cli": "^5.0.4",
+    "@graphql-codegen/introspection": "^4.0.3",
+    "@graphql-codegen/typescript": "^4.1.3",
+    "@graphql-codegen/typescript-apollo-angular": "^4.0.0",
+    "@graphql-codegen/typescript-operations": "^4.4.1",
     "@types/jasmine": "~5.1.0",
+    "cross-env": "^7.0.3",
     "jasmine-core": "~5.5.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
-    "typescript": "~5.7.2"
+    "typescript": "^5.7.3"
   }
 }

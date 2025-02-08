@@ -1,12 +1,16 @@
-﻿using DepositaCashOperations.Application.Common.Constants;
+﻿using DepositaCashOperations.Application.Common.Interfaces;
+using DepositaCashOperations.Domain.Entities;
 using FluentValidation;
 
 namespace DepositaCashOperations.Application.Transactions.Commands.Add
 {
     public class AddTransactionCommandValidator : AbstractValidator<AddTransactionCommand>
     {
-        public AddTransactionCommandValidator()
+        private readonly IRepository<TransactionType> _transactionTypeRepository;
+        public AddTransactionCommandValidator(IRepository<TransactionType> transactionTypeRepository)
         {
+            _transactionTypeRepository = transactionTypeRepository;
+
             RuleFor(request => request.Amount)
              .NotEmpty()
              .WithMessage("Amount is required");
@@ -21,12 +25,12 @@ namespace DepositaCashOperations.Application.Transactions.Commands.Add
 
             RuleFor(request => request.TransactionType)
              .Must(BeValidTransactionType)
-             .WithMessage($"Invalid transaction type. See the list of valid transaction types: {string.Join(", ", TransactionTypeConstant.TransactionTypes)}");
+             .WithMessage($"Invalid transaction type. See the list of valid transaction types: {string.Join(", ", _transactionTypeRepository.GetAll().ToList())}");
         }
 
         private bool BeValidTransactionType(string transactionType)
         {
-            return TransactionTypeConstant.TransactionTypes.Contains(transactionType);
+            return _transactionTypeRepository.Exists(x => x.Name == transactionType);
         }
     }
 }

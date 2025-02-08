@@ -6,7 +6,6 @@ import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-delete-transaction',
-  providers: [TransactionService],
   imports: [MatDialogModule, MatButtonModule],
   templateUrl: './delete-transaction.component.html',
   styleUrl: './delete-transaction.component.css'

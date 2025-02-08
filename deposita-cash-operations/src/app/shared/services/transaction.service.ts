@@ -1,14 +1,27 @@
 import { Observable } from "rxjs";
-import { Injectable } from "@angular/core";
+import { Injectable, Signal, signal } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { environment } from "../../../environments/environment";
 import { Transaction, TransactionType } from "../models";
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class TransactionService {
   private readonly baseUrl: string = environment.applicationUrl;
+  private transactionAdded = signal<boolean>(false);
 
   constructor(private httpClient: HttpClient) { }
+
+  get transactionAddedSignal(): Signal<boolean> {
+    return this.transactionAdded;
+  }
+
+  notifyTransactionAdded(): void {
+    this.transactionAdded.set(true);
+  }
+
+  resetSignal(): void {
+    this.transactionAdded.set(false);
+  }
 
   getAll(): Observable<Array<Transaction>> {
     return this.httpClient.get<Array<Transaction>>(`${this.baseUrl}/transactions`)

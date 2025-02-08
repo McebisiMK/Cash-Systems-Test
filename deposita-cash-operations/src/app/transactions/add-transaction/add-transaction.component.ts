@@ -19,11 +19,12 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { provideNativeDateAdapter } from '@angular/material/core';
 import { TransactionService } from '../../shared/services/transaction.service';
-import { Transaction, TransactionType } from '../../shared/models';
+import { Transaction } from '../../shared/models';
+import { AddTransactionGQL, GetTransactionTypesGQL, TransactionTypeDto } from '../../shared/graphQL/codegen/graphql';
 
 @Component({
   selector: 'app-add-transaction',
-  providers: [provideNativeDateAdapter(), TransactionService],
+  providers: [provideNativeDateAdapter(), GetTransactionTypesGQL],
   imports: [
     MatDialogModule,
     CommonModule,
@@ -42,12 +43,14 @@ import { Transaction, TransactionType } from '../../shared/models';
 })
 export class AddTransactionComponent implements OnInit {
   transactionFormGroup?: UntypedFormGroup;
-  transactionTypeControl = new FormControl<TransactionType | null>(null, Validators.required);
-  transactionTypes: TransactionType[] = [];
+  transactionTypeControl = new FormControl<TransactionTypeDto | null>(null, Validators.required);
+  transactionTypes: TransactionTypeDto[] = [];
 
   constructor(
     private formBuilder: UntypedFormBuilder,
+    private addTransactionGQL: AddTransactionGQL,
     private transactionService: TransactionService,
+    private transactionTypesGQL: GetTransactionTypesGQL,
     private transactionDialogRef: MatDialogRef<AddTransactionComponent>
   ) {
     this.transactionDialogRef.disableClose = true;
@@ -55,9 +58,9 @@ export class AddTransactionComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.transactionService.getTransactionTypes().subscribe({
-      next: (transactionTypes) => {
-        this.transactionTypes = transactionTypes;
+    this.transactionTypesGQL.watch().valueChanges.subscribe({
+      next: (response) => {
+        this.transactionTypes = response.data.transactionTypes || []
       }
     })
   }
@@ -69,19 +72,19 @@ export class AddTransactionComponent implements OnInit {
   submit(): void {
     if (this.transactionFormGroup?.valid && this.transactionFormGroup.dirty) {
       const transaction = {
-        amount: this.transactionFormGroup.getRawValue().amount,
+        amount: Number(this.transactionFormGroup.getRawValue().amount),
         description: this.transactionFormGroup.getRawValue().description,
         transactionType: this.transactionTypeControl?.getRawValue()!.name,
         dateCreated: this.transactionFormGroup.getRawValue().dateCreated
       } as Transaction;
 
-      this.transactionService.save(transaction).subscribe({
+      this.addTransactionGQL.mutate({ command: transaction }).subscribe({
         next: (response) => {
           this.transactionFormGroup?.reset();
           this.transactionDialogRef.close();
-          window.location.reload();
+          this.transactionService.notifyTransactionAdded();
         }
-      });
+      })
     }
   }
 
