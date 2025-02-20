@@ -13,6 +13,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { provideNativeDateAdapter } from '@angular/material/core';
+import { GetTransactionTypesGQL, UpdateTransactionGQL } from '../../shared/graphQL/codegen/graphql';
 
 @Component({
   selector: 'app-update-transaction',
@@ -41,6 +42,8 @@ export class UpdateTransactionComponent implements OnInit {
   constructor(
     private formBuilder: UntypedFormBuilder,
     private transactionService: TransactionService,
+    private updateTransactionGQL: UpdateTransactionGQL,
+    private transactionTypesGQL: GetTransactionTypesGQL,
     private transactionDialogRef: MatDialogRef<UpdateTransactionComponent>,
     @Inject(MAT_DIALOG_DATA) public data: { transaction: Transaction }
   ) {
@@ -49,9 +52,9 @@ export class UpdateTransactionComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.transactionService.getTransactionTypes().subscribe({
-      next: (transactionTypes) => {
-        this.transactionTypes = transactionTypes;
+    this.transactionTypesGQL.watch().valueChanges.subscribe({
+      next: (response) => {
+        this.transactionTypes = response.data.transactionTypes || [];
         this.transactionTypeControl.patchValue(this.transactionTypes.find(x => x.name === this.data.transaction.transactionType) || null)
       }
     })
@@ -67,14 +70,14 @@ export class UpdateTransactionComponent implements OnInit {
         id: this.data.transaction.id,
         amount: this.transactionFormGroup.getRawValue().amount,
         description: this.transactionFormGroup.getRawValue().description,
-        transactionType: this.transactionTypeControl?.getRawValue()!.name,
-        dateCreated: this.transactionFormGroup.getRawValue().dateCreated
-      } as Transaction;
+        transactionType: this.transactionTypeControl?.getRawValue()!.name
+      };
 
-      this.transactionService.update(transaction).subscribe({
-        next: (response) => {
+      this.updateTransactionGQL.mutate({ command: transaction }).subscribe({
+        next: (_) => {
           this.transactionFormGroup?.reset();
           this.transactionDialogRef.close();
+          this.transactionService.notifyTransactionAdded();
         }
       });
     }

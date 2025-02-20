@@ -219,6 +219,20 @@ export type AddTransactionMutationVariables = Exact<{
 
 export type AddTransactionMutation = { __typename?: 'Mutation', addTransaction?: { __typename?: 'TransactionDTO', id: number, amount: any, description: string, transactionType: string, dateCreated: any } | null };
 
+export type UpdateTransactionMutationVariables = Exact<{
+  command: UpdateTransactionCommandInput;
+}>;
+
+
+export type UpdateTransactionMutation = { __typename?: 'Mutation', updateTransaction?: { __typename?: 'TransactionDTO', id: number, amount: any, description: string, transactionType: string, dateCreated: any } | null };
+
+export type DeleteTransactionMutationVariables = Exact<{
+  command: DeleteTransactionCommandInput;
+}>;
+
+
+export type DeleteTransactionMutation = { __typename?: 'Mutation', deleteTransaction: boolean };
+
 export type GetTransactionTypesQueryVariables = Exact<{
   order?: InputMaybe<Array<TransactionTypeDtoSortInput> | TransactionTypeDtoSortInput>;
 }>;
@@ -258,6 +272,40 @@ export const AddTransactionDocument = gql`
   })
   export class AddTransactionGQL extends Apollo.Mutation<AddTransactionMutation, AddTransactionMutationVariables> {
     document = AddTransactionDocument;
+    
+    constructor(apollo: Apollo.Apollo) {
+      super(apollo);
+    }
+  }
+export const UpdateTransactionDocument = gql`
+    mutation UpdateTransaction($command: UpdateTransactionCommandInput!) {
+  updateTransaction(command: $command) {
+    ...TransactionTable_Transaction
+  }
+}
+    ${TransactionTable_TransactionFragmentDoc}`;
+
+  @Injectable({
+    providedIn: 'root'
+  })
+  export class UpdateTransactionGQL extends Apollo.Mutation<UpdateTransactionMutation, UpdateTransactionMutationVariables> {
+    document = UpdateTransactionDocument;
+    
+    constructor(apollo: Apollo.Apollo) {
+      super(apollo);
+    }
+  }
+export const DeleteTransactionDocument = gql`
+    mutation DeleteTransaction($command: DeleteTransactionCommandInput!) {
+  deleteTransaction(command: $command)
+}
+    `;
+
+  @Injectable({
+    providedIn: 'root'
+  })
+  export class DeleteTransactionGQL extends Apollo.Mutation<DeleteTransactionMutation, DeleteTransactionMutationVariables> {
+    document = DeleteTransactionDocument;
     
     constructor(apollo: Apollo.Apollo) {
       super(apollo);

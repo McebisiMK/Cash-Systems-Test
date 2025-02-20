@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\SBM\\Downloads\\Repositories\\Cash-Systems-Test\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0C7BCC16-BA31-4CDC-9B98-2D1E711646B8}|DepositaCashOperations.API\\DepositaCashOperations.API.csproj|c:\\users\\sbm\\downloads\\repositories\\cash-systems-test\\depositacashoperations.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0C7BCC16-BA31-4CDC-9B98-2D1E711646B8}|DepositaCashOperations.API\\DepositaCashOperations.API.csproj|solutionrelative:depositacashoperations.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5CA5F3CA-E879-4D57-8E8F-EF6D24662D9A}|DepositaCashOperations.Application\\DepositaCashOperations.Application.csproj|c:\\users\\sbm\\downloads\\repositories\\cash-systems-test\\depositacashoperations.application\\transactions\\commands\\update\\updatetransactioncommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5CA5F3CA-E879-4D57-8E8F-EF6D24662D9A}|DepositaCashOperations.Application\\DepositaCashOperations.Application.csproj|solutionrelative:depositacashoperations.application\\transactions\\commands\\update\\updatetransactioncommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0C7BCC16-BA31-4CDC-9B98-2D1E711646B8}|DepositaCashOperations.API\\DepositaCashOperations.API.csproj|c:\\users\\sbm\\downloads\\repositories\\cash-systems-test\\depositacashoperations.api\\graphql\\mutations\\transactionmutations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0C7BCC16-BA31-4CDC-9B98-2D1E711646B8}|DepositaCashOperations.API\\DepositaCashOperations.API.csproj|solutionrelative:depositacashoperations.api\\graphql\\mutations\\transactionmutations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0C7BCC16-BA31-4CDC-9B98-2D1E711646B8}|DepositaCashOperations.API\\DepositaCashOperations.API.csproj|c:\\users\\sbm\\downloads\\repositories\\cash-systems-test\\depositacashoperations.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0C7BCC16-BA31-4CDC-9B98-2D1E711646B8}|DepositaCashOperations.API\\DepositaCashOperations.API.csproj|solutionrelative:depositacashoperations.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0C7BCC16-BA31-4CDC-9B98-2D1E711646B8}|DepositaCashOperations.API\\DepositaCashOperations.API.csproj|c:\\users\\sbm\\downloads\\repositories\\cash-systems-test\\depositacashoperations.api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
@@ -33,10 +37,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{0C7BCC16-BA31-4CDC-9B98-2D1E711646B8}|DepositaCashOperations.API\\DepositaCashOperations.API.csproj|c:\\users\\sbm\\downloads\\repositories\\cash-systems-test\\depositacashoperations.api\\graphql\\queries\\transactionqueries.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0C7BCC16-BA31-4CDC-9B98-2D1E711646B8}|DepositaCashOperations.API\\DepositaCashOperations.API.csproj|solutionrelative:depositacashoperations.api\\graphql\\queries\\transactionqueries.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5CA5F3CA-E879-4D57-8E8F-EF6D24662D9A}|DepositaCashOperations.Application\\DepositaCashOperations.Application.csproj|c:\\users\\sbm\\downloads\\repositories\\cash-systems-test\\depositacashoperations.application\\transactions\\commands\\update\\updatetransactioncommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5CA5F3CA-E879-4D57-8E8F-EF6D24662D9A}|DepositaCashOperations.Application\\DepositaCashOperations.Application.csproj|solutionrelative:depositacashoperations.application\\transactions\\commands\\update\\updatetransactioncommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5CA5F3CA-E879-4D57-8E8F-EF6D24662D9A}|DepositaCashOperations.Application\\DepositaCashOperations.Application.csproj|c:\\users\\sbm\\downloads\\repositories\\cash-systems-test\\depositacashoperations.application\\transactions\\commands\\add\\addtransactioncommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -69,10 +69,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{5CA5F3CA-E879-4D57-8E8F-EF6D24662D9A}|DepositaCashOperations.Application\\DepositaCashOperations.Application.csproj|c:\\users\\sbm\\downloads\\repositories\\cash-systems-test\\depositacashoperations.application\\common\\interceptors\\requestvalidatorinterceptor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5CA5F3CA-E879-4D57-8E8F-EF6D24662D9A}|DepositaCashOperations.Application\\DepositaCashOperations.Application.csproj|solutionrelative:depositacashoperations.application\\common\\interceptors\\requestvalidatorinterceptor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0C7BCC16-BA31-4CDC-9B98-2D1E711646B8}|DepositaCashOperations.API\\DepositaCashOperations.API.csproj|c:\\users\\sbm\\downloads\\repositories\\cash-systems-test\\depositacashoperations.api\\controllers\\transactionscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0C7BCC16-BA31-4CDC-9B98-2D1E711646B8}|DepositaCashOperations.API\\DepositaCashOperations.API.csproj|solutionrelative:depositacashoperations.api\\controllers\\transactionscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -82,35 +78,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "TransactionQueries.cs",
-              "DocumentMoniker": "C:\\Users\\SBM\\Downloads\\Repositories\\Cash-Systems-Test\\DepositaCashOperations.API\\GraphQL\\Queries\\TransactionQueries.cs",
-              "RelativeDocumentMoniker": "DepositaCashOperations.API\\GraphQL\\Queries\\TransactionQueries.cs",
-              "ToolTip": "C:\\Users\\SBM\\Downloads\\Repositories\\Cash-Systems-Test\\DepositaCashOperations.API\\GraphQL\\Queries\\TransactionQueries.cs",
-              "RelativeToolTip": "DepositaCashOperations.API\\GraphQL\\Queries\\TransactionQueries.cs",
-              "ViewState": "AQIAAAIAAAAAAAAAAAAAAAkAAABMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-02T11:41:37.857Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 0,
               "Title": "UpdateTransactionCommand.cs",
               "DocumentMoniker": "C:\\Users\\SBM\\Downloads\\Repositories\\Cash-Systems-Test\\DepositaCashOperations.Application\\Transactions\\Commands\\Update\\UpdateTransactionCommand.cs",
               "RelativeDocumentMoniker": "DepositaCashOperations.Application\\Transactions\\Commands\\Update\\UpdateTransactionCommand.cs",
               "ToolTip": "C:\\Users\\SBM\\Downloads\\Repositories\\Cash-Systems-Test\\DepositaCashOperations.Application\\Transactions\\Commands\\Update\\UpdateTransactionCommand.cs",
               "RelativeToolTip": "DepositaCashOperations.Application\\Transactions\\Commands\\Update\\UpdateTransactionCommand.cs",
-              "ViewState": "AQIAAAkAAACANTMzMzMLwCEAAAAgAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAApAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-22T11:15:56.401Z"
+              "WhenOpened": "2025-01-22T11:15:56.401Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "TransactionTypeQueries.cs",
               "DocumentMoniker": "C:\\Users\\SBM\\Downloads\\Repositories\\Cash-Systems-Test\\DepositaCashOperations.API\\GraphQL\\Queries\\TransactionTypeQueries.cs",
               "RelativeDocumentMoniker": "DepositaCashOperations.API\\GraphQL\\Queries\\TransactionTypeQueries.cs",
@@ -122,7 +107,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "DeleteTransactionCommand.cs",
               "DocumentMoniker": "C:\\Users\\SBM\\Downloads\\Repositories\\Cash-Systems-Test\\DepositaCashOperations.Application\\Transactions\\Commands\\Delete\\DeleteTransactionCommand.cs",
               "RelativeDocumentMoniker": "DepositaCashOperations.Application\\Transactions\\Commands\\Delete\\DeleteTransactionCommand.cs",
@@ -134,7 +119,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\SBM\\Downloads\\Repositories\\Cash-Systems-Test\\DepositaCashOperations.API\\Program.cs",
               "RelativeDocumentMoniker": "DepositaCashOperations.API\\Program.cs",
@@ -142,8 +127,7 @@
               "RelativeToolTip": "DepositaCashOperations.API\\Program.cs",
               "ViewState": "AQIAACMAAACQz8zMzMwnwCoAAABCAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-02T08:51:30.77Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-02T08:51:30.77Z"
             },
             {
               "$type": "Document",
@@ -153,13 +137,25 @@
               "RelativeDocumentMoniker": "DepositaCashOperations.API\\GraphQL\\Mutations\\TransactionMutations.cs",
               "ToolTip": "C:\\Users\\SBM\\Downloads\\Repositories\\Cash-Systems-Test\\DepositaCashOperations.API\\GraphQL\\Mutations\\TransactionMutations.cs",
               "RelativeToolTip": "DepositaCashOperations.API\\GraphQL\\Mutations\\TransactionMutations.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAxAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAABoAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-02T11:46:27.331Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 8,
+              "Title": "TransactionQueries.cs",
+              "DocumentMoniker": "C:\\Users\\SBM\\Downloads\\Repositories\\Cash-Systems-Test\\DepositaCashOperations.API\\GraphQL\\Queries\\TransactionQueries.cs",
+              "RelativeDocumentMoniker": "DepositaCashOperations.API\\GraphQL\\Queries\\TransactionQueries.cs",
+              "ToolTip": "C:\\Users\\SBM\\Downloads\\Repositories\\Cash-Systems-Test\\DepositaCashOperations.API\\GraphQL\\Queries\\TransactionQueries.cs",
+              "RelativeToolTip": "DepositaCashOperations.API\\GraphQL\\Queries\\TransactionQueries.cs",
+              "ViewState": "AQIAAAIAAAAAAAAAAAAAAAkAAABMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-02T11:41:37.857Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "launchSettings.json",
               "DocumentMoniker": "C:\\Users\\SBM\\Downloads\\Repositories\\Cash-Systems-Test\\DepositaCashOperations.API\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "DepositaCashOperations.API\\Properties\\launchSettings.json",
@@ -171,7 +167,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "DepositaCashOperations.API",
               "DocumentMoniker": "C:\\Users\\SBM\\Downloads\\Repositories\\Cash-Systems-Test\\DepositaCashOperations.API\\DepositaCashOperations.API.csproj",
               "RelativeDocumentMoniker": "DepositaCashOperations.API\\DepositaCashOperations.API.csproj",
@@ -182,7 +178,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "DepositaCashOperations.API.csproj",
               "DocumentMoniker": "C:\\Users\\SBM\\Downloads\\Repositories\\Cash-Systems-Test\\DepositaCashOperations.API\\DepositaCashOperations.API.csproj",
               "RelativeDocumentMoniker": "DepositaCashOperations.API\\DepositaCashOperations.API.csproj",
@@ -287,18 +283,6 @@
               "ViewState": "AQIAAAEAAADAAAAAAAAhwBoAAAA1AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-22T11:12:47.831Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "TransactionsController.cs",
-              "DocumentMoniker": "C:\\Users\\SBM\\Downloads\\Repositories\\Cash-Systems-Test\\DepositaCashOperations.API\\Controllers\\TransactionsController.cs",
-              "RelativeDocumentMoniker": "DepositaCashOperations.API\\Controllers\\TransactionsController.cs",
-              "ToolTip": "C:\\Users\\SBM\\Downloads\\Repositories\\Cash-Systems-Test\\DepositaCashOperations.API\\Controllers\\TransactionsController.cs",
-              "RelativeToolTip": "DepositaCashOperations.API\\Controllers\\TransactionsController.cs",
-              "ViewState": "AQIAAA8AAAAA3szMzMwWwBkAAAAIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-22T11:11:41.735Z"
             }
           ]
         }

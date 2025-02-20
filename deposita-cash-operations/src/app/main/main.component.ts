@@ -10,7 +10,7 @@ import { FooterComponent } from "./footer/footer.component";
       <ng-content />
     <main-footer />
   `,
-  styles: './main.component.css'
+  styles: ``
 })
 export class MainComponent {
 

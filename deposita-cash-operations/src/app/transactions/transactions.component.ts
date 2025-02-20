@@ -17,14 +17,16 @@ import { DeleteTransactionComponent } from './delete-transaction/delete-transact
 import { GetTransactionsGQL, SortEnumType } from '../shared/graphQL/codegen/graphql';
 import { debounceTime } from 'rxjs/operators';
 import { TransactionService } from '../shared/services/transaction.service';
+import { MatCardModule } from '@angular/material/card';
+import { AddTransactionComponent } from './add-transaction/add-transaction.component';
 
 @Component({
   selector: 'app-transactions',
-  providers: [GetTransactionsGQL],
   imports: [
     FormsModule,
     MatFormFieldModule,
     CommonModule,
+    MatCardModule,
     MatPaginatorModule,
     MatProgressSpinnerModule,
     MatTableModule,
@@ -72,12 +74,16 @@ export class TransactionsComponent implements OnInit {
     })
   }
 
+  addTransaction(): void {
+    this.dialog.open(AddTransactionComponent, {
+      width: '60%'
+    });
+  }
+
   update(transaction: Transaction): void {
     this.dialog.open(UpdateTransactionComponent, {
       width: '60%',
       data: { transaction }
-    }).afterClosed().subscribe(() => {
-      this.loadTransactions();
     });
   }
 
@@ -85,18 +91,16 @@ export class TransactionsComponent implements OnInit {
     this.dialog.open(DeleteTransactionComponent, {
       width: '60%',
       data: { id }
-    }).afterClosed().subscribe((confirmed: boolean) => {
-      if (confirmed) this.loadTransactions();
-    })
+    });
   }
 
   private loadTransactions(): void {
     const take = this.pageSize;
     const skip = this.currentPage * this.pageSize;
 
-    this.transactionsGQL.watch({ skip: skip, take: take, order: { amount: SortEnumType.Desc } }).valueChanges.subscribe({
+    this.transactionsGQL.watch({ skip: skip, take: take, order: { amount: SortEnumType.Desc } }, { fetchPolicy: 'cache-and-network' }).valueChanges.subscribe({
       next: (response) => {
-        this.dataSource = new MatTableDataSource(response.data.transactions?.items || []);
+        this.dataSource.data = response.data.transactions?.items || [];
         this.totalCount = response.data.transactions?.totalCount || 0;
       }
     })

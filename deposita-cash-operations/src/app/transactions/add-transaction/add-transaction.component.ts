@@ -24,7 +24,7 @@ import { AddTransactionGQL, GetTransactionTypesGQL, TransactionTypeDto } from '.
 
 @Component({
   selector: 'app-add-transaction',
-  providers: [provideNativeDateAdapter(), GetTransactionTypesGQL],
+  providers: [provideNativeDateAdapter()],
   imports: [
     MatDialogModule,
     CommonModule,

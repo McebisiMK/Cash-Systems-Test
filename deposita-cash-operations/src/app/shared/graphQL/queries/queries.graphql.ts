@@ -11,7 +11,7 @@ import {
 
 type Queries<T extends keyof Query> = Pick<Query, T>;
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class TransactionTypesQuery extends Apollo.Query<Queries<'transactionTypes'>, QueryTransactionTypesArgs> {
   document: any = gql`
     query GetTransactionTypes($order: [TransactionTypeDTOSortInput!]) {
@@ -33,7 +33,7 @@ const TRANSACTION_FRAGMENT = gql`
   }
 `
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class TransactionsQuery extends Apollo.Query<Queries<'transactions'>, QueryTransactionsArgs> {
   document = gql`
     query GetTransactions($skip: Int, $take: Int, $order: [TransactionDTOSortInput!], $where: TransactionDTOFilterInput) {
